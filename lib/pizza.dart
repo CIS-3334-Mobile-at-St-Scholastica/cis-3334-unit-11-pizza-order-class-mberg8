@@ -1,18 +1,22 @@
 
 
 class Pizza {
-  String _topping;
-  double _price;
+
   int _size;
-  String strSize;
+  double price;
+  String toppings;
   String description;
 
-  final PIZZA_PRICES = [7.99, 9.99, 12.99, 14.99];
-  final PIZZA_SIZES = ["Small", "Medium", "Large", "X-Large"];
+  // ignore: non_constant_identifier_names
+  final PIZZA_PRICES =[7.99, 9.999, 12.999, 14.99];
+  // ignore: non_constant_identifier_names
+  final PIZZA_SIZES =["small", "Medium", "Large","X-Large"];
 
-  Pizza(String this._topping, int this._size) {
-    _price = PIZZA_PRICES[_size];
-    strSize = PIZZA_SIZES[_size];
-    description = "$strSize $_topping pizza";
+  Pizza(this._size, this.toppings){
+    price = PIZZA_PRICES[_size];
+    description = "$_size$toppings, Pizza";
   }
+
+  @override
+  String toString()=> (PIZZA_SIZES[_size] + toppings + "Pizza");
 }
